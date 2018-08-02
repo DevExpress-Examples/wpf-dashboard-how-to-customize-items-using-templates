@@ -1,0 +1,39 @@
+﻿<dx:ThemedWindow
+    x:Class="WpfDashboardCustomTemplates.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxdash="http://schemas.devexpress.com/winfx/2008/xaml/dashboard"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:local="clr-namespace:WpfDashboardCustomTemplates"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="800"
+    Height="600"
+    mc:Ignorable="d"
+    Title="MainWindow">
+
+    <dx:ThemedWindow.Resources>
+        <DataTemplate x:Key="gridTemplate">
+            <dxg:GridControl Style="{Binding Path=(dxdash:DashboardLayoutItem.ViewStyle), RelativeSource={RelativeSource TemplatedParent}}">
+                <dxg:GridControl.View>
+                    <dxg:TableView AllowColumnMoving="True" />
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </DataTemplate>
+    </dx:ThemedWindow.Resources>
+
+    <Grid>
+        <dxdash:DashboardControl
+            x:Name="dashboardControl"
+            MinHeight="150"
+            DashboardSource="{x:Type local:Dashboard1}">
+            <dxdash:DashboardControl.GridItemStyle>
+                <Style TargetType="dxdash:GridDashboardLayoutItem">
+                    <Setter Property="ContentTemplate" Value="{StaticResource gridTemplate}" />
+                </Style>
+            </dxdash:DashboardControl.GridItemStyle>
+        </dxdash:DashboardControl>
+    </Grid>
+
+</dx:ThemedWindow>
