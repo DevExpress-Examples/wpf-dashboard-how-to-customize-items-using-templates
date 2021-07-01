@@ -1,4 +1,4 @@
-# How to Customize the GridDashboardItem Using Template
+# Dashboard for WPF - How to Customize the GridDashboardItem Using Template
 
 This example demonstrates how to use the [DashboardControl.GridItemStyle](https://docs.devexpress.com/Dashboard/DevExpress.DashboardWpf.DashboardControlBase.GridItemStyle) property in XAML to apply a custom template that allows an end-user to move grid columns by dragging their headers.
 
